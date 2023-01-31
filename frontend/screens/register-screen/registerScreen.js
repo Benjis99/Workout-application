@@ -1,24 +1,38 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
+  ScrollView,
   StyleSheet,
   Image,
   SafeAreaView,
   TextInput,
 } from 'react-native';
 
+//Datepicker
+import DatePicker from 'react-native-date-picker';
+
+//Icons
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
+//Components
+import InputField from '../../component/InputField';
+import CustomButton from '../../component/CustomButton';
 Ionicons.loadFont();
 MaterialIcons.loadFont();
 
 export default function RegisterScreen({navigation}) {
+  const [date, setDate] = useState(new Date());
+  const [open, setOpen] = useState(new Date());
+  const [dobLabel, setDobLabel] = useState('Date of birth');
   return (
     <SafeAreaView
       style={{flex: 1, justifyContent: 'center', backgroundColor: '#84a07c'}}>
-      <View style={{paddingHorizontal: 30}}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{paddingHorizontal: 30}}>
         <View style={{alignItems: 'center'}}>
           <Image
             source={{
@@ -27,73 +41,98 @@ export default function RegisterScreen({navigation}) {
             style={{width: 300, height: 300}}
           />
         </View>
+        <Text
+          style={{
+            fontSize: 28,
+            fontWeight: '100',
+            color: 'white',
+          }}>
+          Register
+        </Text>
+
+        <InputField
+          label={'Full Name'}
+          icon={
+            <Ionicons
+              name="person-outline"
+              size={24}
+              color={'black'}
+              style={{marginRight: 10}}
+            />
+          }
+        />
+
+        <InputField
+          label={'Email Address'}
+          icon={
+            <MaterialIcons
+              name="alternate-email"
+              size={20}
+              color={'black'}
+              style={{marginRight: 5}}
+            />
+          }
+          keyboardType="email-address"
+        />
+
+        <InputField
+          label={'Password'}
+          icon={
+            <Ionicons
+              name="ios-lock-closed-outline"
+              size={20}
+              color={'black'}
+              style={{marginRight: 5}}
+            />
+          }
+          inputType="password"
+        />
+        <InputField
+          label={'Confirm password'}
+          icon={<Ionicons />}
+          inputType="password"
+        />
+
         <View
           style={{
             flexDirection: 'row',
-            borderBottomColor: '#ccc',
+            borderBottomColor: 'white',
             borderBottomWidth: 1,
             paddingBottom: 8,
-            marginBottom: 25,
-            marginTop: 50,
-          }}>
-          <MaterialIcons
-            name="alternate-email"
-            size={20}
-            color={'black'}
-            style={{marginRight: 5}}
-          />
-          <TextInput
-            placeholder="Email"
-            placeholderTextColor="black"
-            style={{flex: 1, paddingVertical: 0}}
-            keyboardType="email-address"
-          />
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            borderBottomColor: '#ccc',
-            borderBottomWidth: 1,
-            paddingBottom: 8,
-            marginBottom: 25,
-          }}>
-          <Ionicons
-            name="ios-lock-closed-outline"
-            size={20}
-            color={'black'}
-            style={{marginRight: 5}}
-          />
-          <TextInput
-            placeholder="Password"
-            placeholderTextColor="black"
-            style={{flex: 1, paddingVertical: 0}}
-            secureTextEntry={true}
-          />
-          <TouchableOpacity onPress={() => {}}>
-            <Text style={{color: 'white', fontWeight: '700'}}>Forgot?</Text>
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity
-          onPress={() => {}}
-          style={{
-            backgroundColor: 'black',
-            padding: 20,
-            borderRadius: 10,
             marginBottom: 30,
           }}>
-          <Text
-            style={{
-              textAlign: 'center',
-              fontWeight: '700',
-              fontSize: 16,
-              color: 'white',
-            }}>
-            Login
+          <Ionicons
+            name="calendar-outline"
+            size={20}
+            color={'black'}
+            style={{marginRight: 5}}
+          />
+          <TouchableOpacity onPress={() => setOpen(true)}>
+            <Text style={{marginLeft: 5, marginTop: 5}}>{dobLabel}</Text>
+          </TouchableOpacity>
+        </View>
+
+        <DatePicker
+          modal
+          open={open}
+          date={date}
+          mode={'date'}
+          onConfirm={date => {
+            setOpen(false);
+            setDate(date);
+            setDobLabel(date.toDateString());
+          }}
+          onCancel={() => {
+            setOpen(false);
+          }}
+        />
+
+        <View>
+          <CustomButton label={'Register'} onPress={() => {}} />
+          <Text style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
+            login with...
           </Text>
-        </TouchableOpacity>
-        <Text style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
-          login with...
-        </Text>
+        </View>
         <View
           style={{
             flexDirection: 'row',
@@ -137,11 +176,12 @@ export default function RegisterScreen({navigation}) {
             justifyContent: 'center',
             marginBottom: 30,
           }}>
-          <TouchableOpacity onPress={() => {}}>
-            <Text style={{color: 'white', fontWeight: 700}}>Register</Text>
+          <Text>Already registered?</Text>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={{color: 'white', fontWeight: '700'}}>Login</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
