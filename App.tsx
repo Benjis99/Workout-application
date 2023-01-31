@@ -4,13 +4,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 //Stacks
 import AppStack from './frontend/navigation/AppStack';
 import AuthStack from './frontend/navigation/AuthStack';
+import TabNavigator from './frontend/navigation/TabNavigator';
 
 const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <AppStack />
-      {/*<AuthStack />*/}
+      {/*<TabNavigator />*/}
+      {/*<AppStack />*/}
+      <AuthStack />
     </NavigationContainer>
   );
 }

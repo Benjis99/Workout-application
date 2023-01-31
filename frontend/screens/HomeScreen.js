@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function HomeScreen({navigation}) {
@@ -16,6 +16,19 @@ export default function HomeScreen({navigation}) {
         style={{fontSize: 26, fontWeight: 'bold'}}>
         Home Screen
       </Text>
+      <View style={{alignItems: 'center'}}>
+        <Image
+          source={{
+            uri: 'https://cdn.pixabay.com/photo/2017/01/12/21/14/sports-1975689__340.png',
+          }}
+          style={{
+            width: 400,
+            height: 290,
+            position: 'absolute',
+            bottom: -450,
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 }
