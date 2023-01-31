@@ -14,7 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 Ionicons.loadFont();
 MaterialIcons.loadFont();
 
-export default function LoginScreen({navigation}) {
+export default function RegisterScreen({navigation}) {
   return (
     <SafeAreaView
       style={{flex: 1, justifyContent: 'center', backgroundColor: '#84a07c'}}>
@@ -137,10 +137,7 @@ export default function LoginScreen({navigation}) {
             justifyContent: 'center',
             marginBottom: 30,
           }}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('RegisterScreen');
-            }}>
+          <TouchableOpacity onPress={() => {}}>
             <Text style={{color: 'white', fontWeight: 700}}>Register</Text>
           </TouchableOpacity>
         </View>
