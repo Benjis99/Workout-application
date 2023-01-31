@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from '../screens/LoginScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
+import CreateWorkout from '../screens/workout-screen/CreateWorkout';
 
 const Stack = createNativeStackNavigator();
 

@@ -1,15 +1,31 @@
-import * as React from "react";
-import { View, Text } from "react-native";
+import * as React from 'react';
+import {View, Text} from 'react-native';
 
-export default function CreateWorkout({ navigation }) {
+export default function CreateWorkout({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text
-        onPress={() => alert("This is the 'create workout' screen")}
-        style={{ fontSize: 26, fontWeight: "bold" }}
-      >
-        Home Screen
-      </Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ListItem.Swipeable
+        leftContent={reset => (
+          <Button
+            title="Info"
+            onPress={() => reset()}
+            icon={{name: 'info', color: 'white'}}
+            buttonStyle={{minHeight: '100%'}}
+          />
+        )}
+        rightContent={reset => (
+          <Button
+            title="Delete"
+            onPress={() => reset()}
+            icon={{name: 'delete', color: 'white'}}
+            buttonStyle={{minHeight: '100%', backgroundColor: 'red'}}
+          />
+        )}>
+        <ListItem.Content>
+          <ListItem.Title>Hello Swiper</ListItem.Title>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem.Swipeable>
+    </SafeAreaView>
   );
 }

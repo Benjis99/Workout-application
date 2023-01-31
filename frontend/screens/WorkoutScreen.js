@@ -1,69 +1,102 @@
 import * as React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   SafeAreaView,
   SectionList,
   StatusBar,
+  ScrollView,
   Alert,
+  TouchableOpacity,
 } from 'react-native';
-
-const DATA = [
-  {
-    data: [
-      'Start workout',
-      'Create workout',
-      'Workout Log',
-      'Test',
-      'Test2',
-      'Test3',
-      'Test4',
-    ],
-  },
-];
+import {ListItem} from '@rneui/themed';
+import {Text, Tile} from '@rneui/themed';
 
 export default function LoginScreen({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.t}>
-        <SectionList
-          sections={DATA}
-          keyExtractor={(item, index) => item + index}
-          renderItem={({item}) => (
-            <View style={styles.item}>
-              <Text onPress={() => Alert.alert(item)} style={styles.title}>
-                {item}
-              </Text>
-            </View>
-          )}
-        />
+    <SafeAreaView>
+      <View style={{alignItems: 'center', backgroundColor: '#84a07c'}}>
+        <ScrollView style={{paddingVertical: 10}}>
+          <Tile
+            onPress={() => Alert.alert('start new workout')}
+            imageSrc={{
+              uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+            }}
+            title="Start new workout"
+            titleStyle={{fontSize: 50}}
+            featured
+            activeOpacity={1}
+            width={390}
+            height={220}
+          />
+          <View style={{paddingTop: 20}}>
+            <Tile
+              onPress={() => Alert.alert('create new workout')}
+              imageSrc={{
+                uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+              }}
+              title="Create new workout"
+              titleStyle={{fontSize: 50}}
+              featured
+              activeOpacity={0.8}
+              width={390}
+              height={220}
+            />
+          </View>
+          <View style={{paddingTop: 20}}>
+            <Tile
+              onPress={() => Alert.alert('Workout log')}
+              imageSrc={{
+                uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+              }}
+              title="Workout log"
+              titleStyle={{fontSize: 50}}
+              featured
+              activeOpacity={0.8}
+              width={390}
+              height={220}
+            />
+          </View>
+          <View style={{paddingTop: 20}}>
+            <Tile
+              onPress={() => Alert.alert('Test')}
+              imageSrc={{
+                uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+              }}
+              title="Test"
+              titleStyle={{fontSize: 50}}
+              featured
+              activeOpacity={0.8}
+              width={390}
+              height={220}
+            />
+          </View>
+          <View style={{paddingTop: 20}}>
+            <Tile
+              onPress={() => Alert.alert('Test2')}
+              imageSrc={{
+                uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+              }}
+              title="Test2"
+              titleStyle={{fontSize: 50}}
+              featured
+              activeOpacity={0.8}
+              width={390}
+              height={220}
+            />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#84a07c',
-    width: '100%',
-    height: '100%',
-  },
-  t: {
-    marginTop: 10,
-    height: '100%',
-  },
-  item: {
-    backgroundColor: '#658354',
-    padding: 20,
-    marginVertical: 8,
-    marginTop: 5,
-  },
-  header: {
-    fontSize: 32,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 20,
+  subHeader: {
+    backgroundColor: 'black',
+    color: 'white',
+    textAlign: 'center',
+    paddingVertical: 5,
+    marginBottom: 10,
   },
 });
