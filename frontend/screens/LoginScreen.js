@@ -11,6 +11,7 @@ import {
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import CustomButton from '../component/CustomButton';
 Ionicons.loadFont();
 MaterialIcons.loadFont();
 
@@ -73,24 +74,7 @@ export default function LoginScreen({navigation}) {
             <Text style={{color: 'white', fontWeight: '700'}}>Forgot?</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          onPress={() => {}}
-          style={{
-            backgroundColor: 'black',
-            padding: 20,
-            borderRadius: 10,
-            marginBottom: 30,
-          }}>
-          <Text
-            style={{
-              textAlign: 'center',
-              fontWeight: '700',
-              fontSize: 16,
-              color: 'white',
-            }}>
-            Login
-          </Text>
-        </TouchableOpacity>
+        <CustomButton label={'Login'} onPress={() => {}} />
         <Text style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
           login with...
         </Text>
