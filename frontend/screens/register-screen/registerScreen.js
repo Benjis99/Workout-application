@@ -25,7 +25,7 @@ MaterialIcons.loadFont();
 
 export default function RegisterScreen({navigation}) {
   const [date, setDate] = useState(new Date());
-  const [open, setOpen] = useState(new Date());
+  const [open, setOpen] = useState(false);
   const [dobLabel, setDobLabel] = useState('Date of birth');
   return (
     <SafeAreaView
