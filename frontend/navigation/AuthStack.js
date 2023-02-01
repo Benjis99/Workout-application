@@ -6,7 +6,7 @@ import CreateWorkout from '../screens/workout-screen/CreateWorkout';
 
 //screens
 import LoginScreen from '../screens/LoginScreen';
-import RegisterScreen from '../screens/register-screen/RegisterScreen';
+import RegisterScreen from '../screens/register-screen/registerScreen';
 
 const Stack = createNativeStackNavigator();
 
