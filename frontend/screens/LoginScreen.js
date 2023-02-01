@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useContext} from 'react';
 import {
   View,
   Text,
@@ -12,10 +12,12 @@ import {
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomButton';
+import {AuthContext} from '../context/AuthContext';
 Ionicons.loadFont();
 MaterialIcons.loadFont();
 
 export default function LoginScreen({navigation}) {
+  const {login} = useContext(AuthContext);
   return (
     <SafeAreaView
       style={{flex: 1, justifyContent: 'center', backgroundColor: '#84a07c'}}>
@@ -74,7 +76,12 @@ export default function LoginScreen({navigation}) {
             <Text style={{color: 'white', fontWeight: '700'}}>Forgot?</Text>
           </TouchableOpacity>
         </View>
-        <CustomButton label={'Login'} onPress={() => {}} />
+        <CustomButton
+          label={'Login'}
+          onPress={() => {
+            login();
+          }}
+        />
         <Text style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
           login with...
         </Text>
