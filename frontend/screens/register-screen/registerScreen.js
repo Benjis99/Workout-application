@@ -136,7 +136,7 @@ export default function RegisterScreen({navigation}) {
             <CustomButton label={'Register'} onPress={() => {}} />
             <Text
               style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
-              login with...
+              register with...
             </Text>
           </View>
           <View
@@ -147,7 +147,9 @@ export default function RegisterScreen({navigation}) {
               justifyContent: 'center',
             }}>
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate('LoginAlternative');
+              }}
               style={{
                 borderColor: 'black',
                 borderWidth: 2,
