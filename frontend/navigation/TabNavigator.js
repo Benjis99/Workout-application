@@ -6,11 +6,13 @@ Ionicons.loadFont();
 import HomeScreen from '../screens/HomeScreen';
 import WorkoutScreen from '../screens/WorkoutScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+
 //Screen names
 const loginName = 'Login';
 const homeName = 'Home';
 const workName = 'Workout';
 const settingsName = 'Settings';
+const createWorkoutName = ' ';
 
 const Tab = createBottomTabNavigator();
 

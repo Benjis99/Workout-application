@@ -1,15 +1,16 @@
-import * as React from "react";
-import { View, Text } from "react-native";
+import * as React from 'react';
+import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 
-export default function WorkoutLog({ navigation }) {
+export default function WorkoutLog({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text
-        onPress={() => alert("This is the 'workout log' screen")}
-        style={{ fontSize: 26, fontWeight: "bold" }}
-      >
-        Home Screen
-      </Text>
-    </View>
+    <SafeAreaView>
+      <Text>Workout history</Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.goBack();
+        }}>
+        <Text>Go back</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
