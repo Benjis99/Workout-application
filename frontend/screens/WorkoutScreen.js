@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   View,
   StyleSheet,
@@ -12,49 +12,54 @@ import {
 import {ListItem} from '@rneui/themed';
 import {Text, Tile} from '@rneui/themed';
 
-export default function LoginScreen({navigation}) {
+export default function WorkoutScreen({navigation}) {
   return (
     <SafeAreaView>
       <View style={{alignItems: 'center', backgroundColor: '#84a07c'}}>
-        <ScrollView style={{paddingVertical: 10}}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{paddingVertical: 10}}>
           <Tile
-            onPress={() => Alert.alert('start new workout')}
-            imageSrc={{
-              uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+            onPress={() => {
+              navigation.navigate('StartWorkout');
             }}
-            title="Start new workout"
-            titleStyle={{fontSize: 50}}
+            imageSrc={{
+              uri: 'https://www.pngall.com/wp-content/uploads/5/Workout-PNG-Free-Download.png',
+            }}
+            title="Start"
+            titleStyle={{fontSize: 30}}
             featured
-            activeOpacity={1}
-            width={390}
-            height={220}
+            width={250}
+            height={250}
           />
           <View style={{paddingTop: 20}}>
             <Tile
-              onPress={() => Alert.alert('create new workout')}
-              imageSrc={{
-                uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+              onPress={() => {
+                navigation.navigate('CreateWorkout');
               }}
-              title="Create new workout"
-              titleStyle={{fontSize: 50}}
+              imageSrc={{
+                uri: 'https://www.pngmart.com/files/15/Fitness-Female-Silhouette-Transparent-PNG.png',
+              }}
+              title="Create"
+              titleStyle={{fontSize: 30}}
               featured
               activeOpacity={0.8}
-              width={390}
-              height={220}
+              width={250}
+              height={250}
             />
           </View>
           <View style={{paddingTop: 20}}>
             <Tile
-              onPress={() => Alert.alert('Workout log')}
+              onPress={() => navigation.navigate('WorkoutLog')}
               imageSrc={{
-                uri: 'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
+                uri: 'https://cdn.pixabay.com/photo/2020/07/05/03/52/weightlifting-5371498_960_720.png',
               }}
-              title="Workout log"
-              titleStyle={{fontSize: 50}}
+              title="History"
+              titleStyle={{fontSize: 30}}
               featured
               activeOpacity={0.8}
-              width={390}
-              height={220}
+              width={250}
+              height={250}
             />
           </View>
           <View style={{paddingTop: 20}}>
@@ -67,8 +72,8 @@ export default function LoginScreen({navigation}) {
               titleStyle={{fontSize: 50}}
               featured
               activeOpacity={0.8}
-              width={390}
-              height={220}
+              width={200}
+              height={200}
             />
           </View>
           <View style={{paddingTop: 20}}>
@@ -81,8 +86,8 @@ export default function LoginScreen({navigation}) {
               titleStyle={{fontSize: 50}}
               featured
               activeOpacity={0.8}
-              width={390}
-              height={220}
+              width={200}
+              height={200}
             />
           </View>
         </ScrollView>
@@ -90,13 +95,3 @@ export default function LoginScreen({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  subHeader: {
-    backgroundColor: 'black',
-    color: 'white',
-    textAlign: 'center',
-    paddingVertical: 5,
-    marginBottom: 10,
-  },
-});

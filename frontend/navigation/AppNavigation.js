@@ -5,7 +5,6 @@ import {NavigationContainer} from '@react-navigation/native';
 //Stacks
 import AppStack from './AppStack';
 import AuthStack from './AuthStack';
-import TabNavigator from './TabNavigator';
 import {AuthContext} from '../context/AuthContext';
 
 const AppNavigation = () => {

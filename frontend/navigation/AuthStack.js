@@ -1,13 +1,14 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import OnboardingScreen from '../screens/OnboardingScreen';
-import CreateWorkout from '../screens/workout-screen/CreateWorkout';
 
 //screens
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/register-screen/RegisterScreen';
 import LoginAlternative from '../screens/login-others/LoginAlternative';
+import CreateWorkout from '../screens/workout-screen/CreateWorkout';
+import StartWorkout from '../screens/workout-screen/StartWorkout';
+import WorkoutLog from '../screens/workout-screen/WorkoutLog';
 
 const Stack = createNativeStackNavigator();
 
