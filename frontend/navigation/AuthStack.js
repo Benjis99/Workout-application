@@ -7,6 +7,7 @@ import CreateWorkout from '../screens/workout-screen/CreateWorkout';
 //screens
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/register-screen/RegisterScreen';
+import LoginAlternative from '../screens/login-others/LoginAlternative';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ const AuthStack = () => {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+      <Stack.Screen name="LoginAlternative" component={LoginAlternative} />
     </Stack.Navigator>
   );
 };

@@ -96,7 +96,9 @@ export default function LoginScreen({navigation}) {
             justifyContent: 'center',
           }}>
           <TouchableOpacity
-            onPress={() => {}}
+            onPress={() => {
+              navigation.navigate('LoginAlternative');
+            }}
             style={{
               borderColor: 'black',
               borderWidth: 2,
