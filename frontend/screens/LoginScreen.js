@@ -9,12 +9,15 @@ import {
   TextInput,
 } from 'react-native';
 
+//icons
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
+//custom button
 import CustomButton from '../component/CustomButton';
+
+//stacks
 import {AuthContext} from '../context/AuthContext';
-Ionicons.loadFont();
-MaterialIcons.loadFont();
 
 export default function LoginScreen({navigation}) {
   const {login} = useContext(AuthContext);
