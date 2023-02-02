@@ -7,6 +7,7 @@ import {
   Image,
   SafeAreaView,
   TextInput,
+  Alert,
 } from 'react-native';
 
 //icons
@@ -75,7 +76,10 @@ export default function LoginScreen({navigation}) {
             style={{flex: 1, paddingVertical: 0}}
             secureTextEntry={true}
           />
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity
+            onPress={() => {
+              Alert.alert('Forgot');
+            }}>
             <Text style={{color: 'white', fontWeight: '700'}}>Forgot?</Text>
           </TouchableOpacity>
         </View>
