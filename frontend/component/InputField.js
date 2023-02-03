@@ -8,6 +8,8 @@ export default function InputField({
   keyboardType,
   fieldButtonLabel,
   fieldButtonFunction,
+  value,
+  setValue,
 }) {
   return (
     <View
@@ -26,6 +28,8 @@ export default function InputField({
           placeholderTextColor="black"
           style={{flex: 1, paddingVertical: 0}}
           secureTextEntry={true}
+          value={value}
+          setValue={setValue}
         />
       ) : (
         <TextInput
@@ -33,6 +37,8 @@ export default function InputField({
           keyboardType={keyboardType}
           placeholderTextColor="black"
           style={{flex: 1, paddingVertical: 0}}
+          value={value}
+          setValue={setValue}
         />
       )}
       <TouchableOpacity onPress={fieldButtonFunction}>

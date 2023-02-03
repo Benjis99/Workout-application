@@ -22,10 +22,27 @@ import InputField from '../../component/InputField';
 import CustomButton from '../../component/CustomButton';
 MaterialIcons.loadFont();
 
-export default function RegisterScreen({navigation}) {
+export default function RegScreen({navigation}) {
+  //For register
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [dobLabel, setDobLabel] = useState('Date of birth');
+  const [fullname, setFullname] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [passwordRepeat, setPasswordRepeat] = useState();
+
+  //const for buttons
+  const onTermsOfUsePressed = () => {
+    console.warn('onTermsOfUsePressed');
+  };
+  const onPrivacyPressed = () => {
+    console.warn('onPrivacyPressed');
+  };
+  const onRegisterPressed = () => {
+    console.warn('Register pressed');
+  };
+
   return (
     <SafeAreaView
       style={{flex: 1, justifyContent: 'center', backgroundColor: '#84a07c'}}>
@@ -57,6 +74,8 @@ export default function RegisterScreen({navigation}) {
           </Text>
           <InputField
             label={'Full Name'}
+            value={fullname}
+            setValue={setFullname}
             icon={
               <Ionicons
                 name="person-outline"
@@ -69,6 +88,8 @@ export default function RegisterScreen({navigation}) {
 
           <InputField
             label={'Email Address'}
+            value={email}
+            setValue={setEmail}
             icon={
               <MaterialIcons
                 name="alternate-email"
@@ -82,6 +103,8 @@ export default function RegisterScreen({navigation}) {
 
           <InputField
             label={'Password'}
+            value={password}
+            setValue={setPassword}
             icon={
               <Ionicons
                 name="ios-lock-closed-outline"
@@ -94,7 +117,16 @@ export default function RegisterScreen({navigation}) {
           />
           <InputField
             label={'Confirm password'}
-            icon={<Ionicons />}
+            value={passwordRepeat}
+            setValue={setPasswordRepeat}
+            icon={
+              <Ionicons
+                name="ios-lock-closed-outline"
+                size={20}
+                color={'black'}
+                style={{marginRight: 5}}
+              />
+            }
             inputType="password"
           />
 
@@ -133,12 +165,30 @@ export default function RegisterScreen({navigation}) {
           />
 
           <View>
-            <CustomButton label={'Register'} onPress={() => {}} />
-            <Text
-              style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
-              register with...
-            </Text>
+            <CustomButton
+              label={'Register'}
+              onPress={() => {
+                navigation.navigate('ConfirmEmailScreen');
+              }}
+            />
           </View>
+          <Text style={{color: 'white', marginBottom: 30}}>
+            By registering, you confirm that you accept our{' '}
+            <Text
+              style={{color: '#FDB075', fontWeight: 600}}
+              onPress={onTermsOfUsePressed}>
+              Term of Use
+            </Text>{' '}
+            and{' '}
+            <Text
+              style={{color: '#FDB075', fontWeight: 600}}
+              onPress={onPrivacyPressed}>
+              Privacy Policy.
+            </Text>
+          </Text>
+          <Text style={{textAlign: 'center', color: 'black', marginBottom: 30}}>
+            register with...
+          </Text>
           <View
             style={{
               flexDirection: 'row',

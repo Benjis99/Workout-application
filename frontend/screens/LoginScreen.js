@@ -78,7 +78,7 @@ export default function LoginScreen({navigation}) {
           />
           <TouchableOpacity
             onPress={() => {
-              Alert.alert('Forgot');
+              navigation.navigate('ForgotPasswordScreen');
             }}>
             <Text style={{color: 'white', fontWeight: '700'}}>Forgot?</Text>
           </TouchableOpacity>
@@ -139,7 +139,7 @@ export default function LoginScreen({navigation}) {
           }}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('RegisterScreen');
+              navigation.navigate('RegScreen');
             }}>
             <Text style={{color: 'white', fontWeight: 700}}>Register</Text>
           </TouchableOpacity>
