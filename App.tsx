@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AuthProvider} from './frontend/context/AuthContext';
 import AppNavigation from './frontend/navigation/AppNavigation';
 
+
 const Stack = createNativeStackNavigator();
 function App() {
   return (
